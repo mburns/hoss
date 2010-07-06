@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/* OSSAccess web site styles for screen (6/29/2010) 
+This is the style page for the index.html page
+
+*/
+
+
+/*define the browser window body*/
+body {
+font-family:Helvetica, Georgia, Arial, sans-serif;
+/*color:#1D3280;*/
+background-color:#CCCCCC;
+font-size:1em;
+line-height:1.5em;
+margin:0;
+}
+
+/*define divisions*/
+
+#page{padding:1em;  width:800px; height:500px;margin-left:auto; margin-right:auto; background-color:#ffffff; border: 1px solid black;}
+/* background-image:url(images/bannerbg.jpg);
+   background-repreat:no-repreat; */
+
+#content{width:740px; padding:5px; border:1px solid; position: absolute; top:280px; left:130px;}
+
+#menu{text-align:center;}
+
+#rightcolumn{width:200px; background-color:#cccccc; float:right; margin:5px;}
+
+#footer{clear:both;}
+
+#printheader{display:none;}
+
+#printfooter{display:none;}
+
+.floatright{float:right; border:1px solid; padding:2px;}
+
+/*set all major text to the same size*/
+p, li, dt {font-size:1em;}
+
+/*remove border from images with links*/
+a img {border:0;}
+
+/*format for menus*/
+
+/*format for logo menu*/
+#logoMenu{float:right;}
+
+/*format for top toolbar*/
+#topmenu {margin:0; width:900px; border-bottom:1px solid;}
+	ul#topmenu {list-style-type:none; display:inline;}
+      ul#topmenu li {padding:3px; display:inline; font-size:.8em; text-align:center;}
+        ul#topmenu li a {padding:3px; text-decoration:none; }
+          ul#topmenu li a:hover {}
+          
+/*format for right toolbar*/
+#rightmenu {width:auto; margin:5px;}
+	ul#rightmenu {list-style-type:none; border:1px solid;}
+      ul#rightmenu li {font-size:.8em;}
+        ul#rightmenu li a {text-decoration:none; }
+          ul#rightmenu li a:hover {}
+
+/*format for social networking toolbar*/
+#socialmenu {}
+	ul#socialmenu {margin: 0; padding: 0; list-style-type:none; }
+      ul#socialmenu li {font-size:.8em; text-align:center;}
+        ul#socialmenu li a {text-decoration:none; }
+          ul#socialmenu li a:hover {}
+
+/*format for footer toolbar*/
+.footermenu {background-color:#478B65;font-size:10px;}
+	ul.footermenu {list-style-type:none; text-align:center;}
+      ul.footermenu li {padding:3px; display:inline; font-size:10px; width:50px;}
+        ul.footermenu li a {padding:3px; text-decoration:none;color:#a8a8a8}
+          ul.footermenu li a:hover {padding:3px;}
+          
+/* format for tables */
+
+table{font-size:12px; margin:20px; width:auto; border-collapse:collapse; text-align: left;}
+caption{font-size:14px; font-style:italic;}
+tr{}
+th{font-size:14px; padding: 10px 8px; border-bottom:2px;}
+td{padding: 9px 0px 0px 8px;}
+tfoot{}
+tbody{}
+thead{}
+
+.odd {background-color: rgb(49,114,205); color:#ffffff;}
+
+/* format for blog entries */
+
+.blogentry {background-color:#f3f3f3; padding:5px;}
+
+/* format for tags */
+
+h1{line-height:.5em;}
+
+/* format for forms */
+form {}
+fieldset {}
+legend {font-family:Arial, Georgia, sans-serif;}
+label {font-size:1em; line-height:1.5em;}
+input, textarea {font-size:1em;}
+.asterisk {font-size:1.5em; color:#CC0000;}
+
+/* format for buttons */
+button.largeButton{
+	margin:.4em;
+	width:10.5em;
+	height:10.5em;
+	padding:1em; 
+	}
+
+button.largeButton:hover {
+    background-color: #336699;
+    color:#ffffff;
+    cursor: pointer;
+}
+
+#login{
+	font-size:.9em;
+	}
