@@ -1,0 +1,106 @@
+/*styles for registration and download page*/
+
+#wrap{
+	width:800px;
+	height: 600px;
+	margin:0 auto;
+	border: 1px solid black;
+	background-color:white;
+}
+
+#skip{
+	position:relative;
+	top:5px;
+	text-align:right;
+	}
+#skip a{
+	border:1px dashed #8C98AE;
+	color:#20399D;
+	margin: 20 0;
+	text-decoration:none;
+	}
+#skip a:hover{
+	color:#00009C;
+	text-decoration:underline;
+	}
+	
+#navigation{
+	width:800px; 
+	position:absolute;
+	top:45px;
+	border-bottom: .5em solid #999999;
+	
+	}
+button.MenuButton{
+	background-color: #d3d3d3;
+	width:156.7px;
+	padding:.6em;
+	border: .3em solid #C0C0C0;
+	}
+button.MenuButton:hover{
+	/*background-color: #0000CC;*/
+	background-color: #336699;
+	color:#ffffff;
+	cursor: pointer;
+	}
+#search{
+	position:relative;
+	top:80px;
+	width:800px;
+	height:35px;
+	border-bottom:.5em solid #999999;
+	}
+#searchbutton{
+	background-color:#d3d3d3;
+	font-size:.8em;
+	color:black;
+	border: .3em solid #C0C0C0;
+	}
+#searchbutton:hover{
+	background-color:#505050;
+	color:white;
+	}
+	
+#registermaincontent{
+	width:600px;
+	height:400px;
+	position:absolute;
+	top:150px;
+	margin-left:30px;
+	}
+
+#center{
+	margin-left:10px;
+	}
+
+#box1{
+	width:350px;
+	/*background-color: #dfdfbc;*/
+	position:absolute;
+	top:190px;
+	border:.7em outset #CCCCCC;
+	}
+#border-bottom{
+	border-bottom:1px solid;
+	border-top:1px solid;
+	}
+#box2{
+	width:350px;
+	position:absolute;
+	top:190px;
+	left:531px;
+	border:.7em outset #CCCCCC;
+	}
+#box3{
+	width:350px;
+	position:absolute;
+	top:400px;
+	border:.7em outset #CCCCCC;
+	}
+#box4{
+	width:350px;
+	position:absolute;
+	top:400px;
+	left:531px;
+	border:.7em outset #CCCCCC;
+	}

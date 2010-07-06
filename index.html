@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<!-- define php variables -->
+<?php $sitename="OSSAccess.com"; ?>
+<?php $sitedescription="OSS for Accessibility"; ?>
+<?php $sitepath="http://www.OSSAccess.com"; ?>
+
+<head>
+	<title>OSS Access - Homepage</title>
+  
+  	<!-- site information -->
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   	<meta name="Keywords" content="" />
+	<meta name="Description" content="Free mobile software for users with disabilities." />
+	<meta name="Author" content="Oregon State University Humanitarian Free Open Source Software Project" />
+	<meta name="Copyright" content="2010 to OSU" />
+	<meta name="Rating" content="PG" />
+	
+	<link href="screen.css" rel="stylesheet" type="text/css" media="screen"/>
+	
+	<!--
+	<link href="<?php echo $sitepath ?>/screen.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="<?php echo $sitepath ?>/print.css"    rel="stylesheet" type="text/css" media="print"/>
+	-->	
+  
+</head>
+<body>
+<div id="page">
+
+<div id="login">
+<form action="" id="login" method="post">
+           <input id="login" name="username" type="text" size="15" value="Username"/>
+		   <input id="login" name="password" type="password" size="15" value="Password"/>
+            <input id="searchbutton" type="submit" value="Submit" />
+			<a href="register.php">Create New Account</a> 
+</form>
+</div>
+
+<div id="content">
+Welcome to Open Source Software Access. <a href="#menu" title="Skip to menu">&darr;</a><br/><br/>
+This website provides free mobile software for users with disabilities.<br/>
+Please select from the following menu options:<br/>
+1. <a href="download.html">Find Software</a> - To search and browse for software<br/>
+2. <a href="download.html">Search Project</a> - To search and browse for exisitng project<br/>
+3. <a href="download.html">Suggest Project</a> - Suggest new project for development<br/>
+4. <a href="/download.html">More Information</a> - For futher information about this website and how to use it<br/>
+5. <a href="/download.html">Contribute</a> - To help with already existing projects, no programming skills required<br/>
+</div>
+
+<div id="logo">
+
+<form action="" id="logoMenu">
+<select name="Language">
+<option value="default">--Select a Language--</option>
+<option value="English">English</option>
+<option value="Dutch">Dutch</option>
+<option value="Japanese">Japanse</option>
+<option value="Add">Add a language...</option>
+<option value="Edit">Edit this language...</option>
+</select>
+
+
+<select name="Accessibility">
+<option value="default">--Accessibility Options--</option>
+<option value="highcontrast">High Contrast</option>
+<option value="largetest">Large Test</option>
+<option value="inversecolors">Inverse Colors</option>
+<option value="request">Request a new option...</option>
+</select>
+</form>
+
+<h1>OSS Access</h1>
+</div>
+
+<div id="menu">
+<button type="button" class="largeButton" onclick="window.location='download.html'">Find Software</button>
+	<button type="button" class="largeButton">Search Project</button>
+	<button type="button" class="largeButton">Suggest Project</button>
+	<button type="button" class="largeButton">More Information</button>
+	<button type="button" class="largeButton">Contribute</button>
+</div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body>
+</html>
