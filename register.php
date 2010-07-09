@@ -44,6 +44,7 @@
 		 <input name="fullname" type="text" size="50"/><br/><br>
          <b>E-mail Address:<font color="red">*</font><input type="text" name="email" size="50"/><br><br>
 </fieldset>
+<input type="hidden" name="form_submitted" value="1"/> 
 <br><input type="submit" name="submit" value="Create New Account" />
 
 </form>
@@ -68,12 +69,16 @@ mysql_select_db($dbname, $con)
 	or die  ("Error selecting the database");
 
 	
+$username=$_POST["username"];
+$password=$_POST["password"];
+$fullname=$_POST["fullname"];
+$email=$_POST["email"];	
+
+
+	
 if (isset($_POST["submit"])){
 
-	$username=$_POST["username"];
-	$password=$_POST["password"];
-	$fullname=$_POST["fullname"];
-	$email=$_POST["email"];
+	
 	
 	//if user does not enter any information
 	if(empty($username) && empty($password) && empty($email)){
@@ -150,26 +155,38 @@ if (isset($_POST["submit"])){
 		$email_exist = mysql_num_rows($checkemail);
 		//if email already exists in database. 
 		if ($email_exist > 0) {
-		?>
-		<script type="text/javascript">
-		alert("The e-mail address already exists in the database. Please enter another e-mail address.");	
-		</script>
-		<?php
-		unset($email);
-		exit();
+			?>
+			<script type="text/javascript">
+			alert("The e-mail address already exists in the database. Please enter another e-mail address.");	
+			</script>
+			<?php
+			unset($email);
+			exit();
 		}
+		
+		if (!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $email)){ 
+			?>
+			<script type="text/javascript">
+			alert("Invalid Email Address.");
+			</script>
+			<?php
+			unset($email);
+			exit();
+			}
+	
 		$password=md5($pssword);
 		//insert the data into database table. 
 		$query = "insert into login (Username, Password, Fullname, Email)
 	    values('$username', '$password', '$fullname', '$email')";
 		$result = mysql_query($query);
 		
-		if(result){
+		if($result){
 		?>
 		<script type="text/javascript">
 		alert("Your Account was created successfully.");	
 		</script>
 		<?php
+
 		}
 	}
 		
