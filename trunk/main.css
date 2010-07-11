@@ -1,11 +1,21 @@
 /*styles for registration and download page*/
-
+body{
+	background-color:#CCCCCC;
+	}
 #wrap{
 	width:800px;
-	height: 600px;
-	margin:0 auto;
-	border: 1px solid black;
+	height:600px;
+	border: 1px solid;
+	margin:0 auto 0 auto;
 	background-color:white;
+}
+body.section1 #navigation button.one,
+body.section2 #navigation button.two,
+body.section3 #navigation button.three,
+body.section4 #navigation button.four,
+body.section5 #navigation button.five
+{
+background:blue;
 }
 
 #skip{
@@ -25,30 +35,38 @@
 	}
 	
 #navigation{
+	list-style-type:none;
+	margin:0;
+	padding:0;
 	width:800px; 
 	position:absolute;
 	top:45px;
-	border-bottom: .5em solid #999999;
-	
+	/*border-bottom: .5em solid #999999;*/
 	}
-button.MenuButton{
-	background-color: #d3d3d3;
-	width:156.7px;
-	padding:.6em;
-	border: .3em solid #C0C0C0;
+#navigation li{
+	float:left;
 	}
-button.MenuButton:hover{
+#navigation button{
+	display:block;
+	background-color:#d3d3d3;
+	width:160px;
+	height:50px;
+	border:1px solid #C0C0C0;
+	}
+#navigation button:hover{
 	/*background-color: #0000CC;*/
 	background-color: #336699;
 	color:#ffffff;
 	cursor: pointer;
 	}
+
 #search{
+	float:right;
 	position:relative;
 	top:80px;
-	width:800px;
 	height:35px;
-	border-bottom:.5em solid #999999;
+	/*width:800px;*/
+	/*border-bottom:.5em solid #999999;*/
 	}
 #searchbutton{
 	background-color:#d3d3d3;
