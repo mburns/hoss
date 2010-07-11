@@ -1,4 +1,4 @@
-<!-- This is the registration page. !-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
 <head>
@@ -18,13 +18,14 @@
 </div>
 
 
-<div id="navigation">
-	<button type="button" class="MenuButton" onclick="window.location='download.html'">Find Software</button>
-	<button type="button" class="MenuButton">Search Project</button>
-	<button type="button" class="MenuButton">Suggest Project</button>
-	<button type="button" class="MenuButton">More Information</button>
-	<button type="button" class="MenuButton">Contribute</button>
-</div>
+<ul id="navigation">
+	<li><button type="button" class="MenuButton" onclick="window.location='download.html'">Find Software</button></li>
+	<li><button type="button" class="MenuButton">Search Project</button></li>
+	<li><button type="button" class="MenuButton">Suggest Project</button></li>
+	<li><button type="button" class="MenuButton">More Information</button></li>
+	<li><button type="button" class="MenuButton">Contribute</button></li>
+</ul>
+
 
 <div id="registermaincontent" > 
 
@@ -46,10 +47,12 @@
 </fieldset>
 <input type="hidden" name="form_submitted" value="1"/> 
 <br><input type="submit" name="submit" value="Create New Account" />
-
 </form>
 </div>
+
+
 <!-- end of main Content Wrapper !-->
+</div>
 </div>
 
 </body>
