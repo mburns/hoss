@@ -4,6 +4,10 @@
 <head>
 <title>Download</title>
 <link rel="stylesheet" type="text/css" href="main.css" />
+
+<script type='text/javascript' src='common.js'></script>
+<script type='text/javascript' src='css.js'></script>
+<script type='text/javascript' src='standardista-table-sorting.js'></script>
 </head>
 <body>
 <body class="section1">
@@ -19,11 +23,14 @@
 <!--top of page navigation!-->
 <ul id="navigation">
 	<li><button class="one"   type="button"  onclick="window.location='download.html'">Find Software</button></li>
-	<li><button class="two"   type="button">Search Project</button></li>
-	<li><button class="three" type="button">Suggest Project</button></li>
-	<li><button class="four"  type="button">More Information</button></li>
-	<li><button class="five"  type="button">Contribute</button></li>
+	<li><button class="two"   type="button" onclick="window.location='searchproject.html'">Search Project</button></li>
+	<li><button class="three" type="button" onclick="window.location='suggestproject.html'">Suggest Project</button></li>
+	<li><button class="four"  type="button" onclick="window.location='moreinfo.html'">More Information</button></li>
+	<li><button class="five"  type="button" onclick="window.location='contribute.html'">Contribute</button></li>
 </ul>
+<div id="title">
+Find Software
+</div>
 
 <!--search box!-->
 <div id="search">
@@ -32,98 +39,108 @@
             <input id="searchbutton" type="submit" value="Search" />
 </form>
 </div>
+<!--
+<div id="downloadbox">
 
+<form action="" id="logoMenu">
+Show
+<select name="showresult">
+<option value="10">10</option>
+<option value="20">20</option>
+<option value="30">30</option> 
+</select>
+results per page
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Sort by:
+<select name="sort"	
+<option value="name">Name</option>
+<option value="category">Category</option>
+<option value="phone">Phone</option> 
+</select>
+</form>
+</div>
+!-->
 
-<!--Visually Impaired section!-->
-<div id="box1">
-	<p><table>
-	<tr><TH id="border-bottom">VISUALLY IMPAIRED</TH>
-	<TH id="border-bottom">PHONES SUPPORTED</TH></tr>
-	<tr>
-	<td>List of Applications</td>
-	<td>Iphone, Andriod</td></tr>
-	<tr>
-	<td>List of Applications</td>
-	<td>Iphone, Andriod</td></tr>
-	<tr>
-	<td>List of Applications</td>
-	<td>Iphone, Andriod</td></tr>
-	<tr>
-	<td>List of Applications</td>
-	<td>Iphone, Andriod</td></tr>
-	<tr>
-	</table></p>
-<!--	<img src="tan-paper-tear2.jpg" alt="" width="350"/>!-->
-	</div>
-	
-	
-<!--Hearing Impaired section!-->
-<div id="box2">
-	<p><table>
-	<tr><TH id="border-bottom">HEARING IMPAIRED</TH>
-	<TH id="border-bottom">PHONES SUPPORTED</TH></tr>
-	<tr>
-	<td>List of Applications</td>
-	<td>Iphone, Andriod</td></tr>
-	<tr>
-	<td>List of Applications</td>
-	<td>Iphone, Andriod</td></tr>
-	<tr>
-	<td>List of Applications</td>
-	<td>Iphone, Andriod</td></tr>
-	<tr>
-	<td>List of Applications</td>
-	<td>Iphone, Andriod</td></tr>
-	<tr>
-	</table></p>
-	<!--<img src="tan-paper-tear2.jpg" alt="" width="350" />!-->
-	</div>
-	
-<!--Mobility Impaired section!-->
-<div id="box3">
-	<p><table>
-	<tr><TH id="border-bottom">MOBILITY IMPAIRED</TH>
-	<TH id="border-bottom">PHONES SUPPORTED</TH></tr>
-	<tr>
-	<td>List of Applications</td>
-	<td>Iphone, Andriod</td></tr>
-	<tr>
-	<td>List of Applications</td>
-	<td>Iphone, Andriod</td></tr>
-	<tr>
-	<td>List of Applications</td>
-	<td>Iphone, Andriod</td></tr>
-	<tr>
-	<td>List of Applications</td>
-	<td>Iphone, Andriod</td></tr>
-	<tr>
-	</table></p>
-	<!--<img src="tan-paper-tear2.jpg" alt="" width="350" />!-->
-	</div>
+<div id="sortexp">
+To sort the table, simply click on the colum header.
 
-<!--Learning Impaired section!-->
-<div id="box4">
-	<p><table>
-	<tr>
-	<TH id="border-bottom">LEARNING IMPAIRED</TH>
-	<TH id="border-bottom">PHONES SUPPORTED</TH>
-	</tr>
-	<tr>
-	<td>List of Applications</td>
-	<td>Iphone, Andriod</td></tr>
-	<tr>
-	<td>List of Applications</td>
-	<td>Iphone, Andriod</td></tr>
-	<tr>
-	<td>List of Applications</td>
-	<td>Iphone, Andriod</td></tr>
-	<tr>
-	<td>List of Applications</td>
-	<td>Iphone, Andriod</td></tr>
-	<tr>
-	</table></p>
-	<!--<img src="tan-paper-tear2.jpg" alt="" width="350" />!-->
-	</div>
+<table class="sortable" id="downloadtable">
+<thead>
+<tr>
+<TH>Application Name</TH>
+<TH>Category</TH>
+<TH>Supported Phone</TH>
+<TH>Download</TH>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td id="firsttd">
+<a href="">Scribe4Me</a>
+<p id="downloadtablep">mobile sound translation tool for the deaf or hard-of-hearing people</p>
+</td>  
+<td id="secondtd">
+Hearing Impaired
+</td>
+<td id="thirdtd">
+Andriod
+</td>
+<td id="fourthtd">
+<a href=""><image src="download.png"></a>
+<a href="">Download Now</a>
+</td>
+</tr>
+
+<tr>
+<td id="firsttd">
+<a href="">Visual Helper</a>
+<p id="downloadtablep">Moblie application for visually impaired people</p>
+</td>  
+<td id="secondtd">
+Visually Impaired
+</td>
+<td id="thirdtd">
+Andriod
+</td>
+<td id="fourthtd">
+<a href=""><image src="download.png"></a>
+<a href="">Download Now</a>
+</td>
+</tr>
+
+<tr>
+<td id="firsttd">
+<a href="">Learning Helper</a>
+<p id="downloadtablep">Moblie application for learning impaired people</p>
+</td>  
+<td id="secondtd">
+Learning Impaired
+</td>
+<td id="thirdtd">
+Iphone
+</td>
+<td id="fourthtd">
+<a href=""><image src="download.png"></a>
+<a href="">Download Now</a>
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tfoot>
+
+</tfoot>
+</tfoot>
+</table>
+	
+
 	
 
 
