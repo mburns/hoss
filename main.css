@@ -1,6 +1,7 @@
 /*styles for registration and download page*/
 body{
 	background-color:#CCCCCC;
+	font-family:Helvetica, Georgia, Arial, sans-serif;
 	}
 #wrap{
 	width:800px;
@@ -59,11 +60,15 @@ background:blue;
 	color:#ffffff;
 	cursor: pointer;
 	}
-
+#title{
+	position:relative;
+	top:80px;
+	font-size:25px;
+	}
 #search{
 	float:right;
 	position:relative;
-	top:80px;
+	top:60px;
 	height:35px;
 	/*width:800px;*/
 	/*border-bottom:.5em solid #999999;*/
@@ -78,12 +83,11 @@ background:blue;
 	background-color:#505050;
 	color:white;
 	}
-	
 #registermaincontent{
 	width:600px;
 	height:400px;
 	position:absolute;
-	top:150px;
+	top:170px;
 	margin-left:30px;
 	}
 
@@ -122,3 +126,70 @@ background:blue;
 	left:531px;
 	border:.7em outset #CCCCCC;
 	}
+#sortexp{
+	position:relative;
+	top:130px;
+	height:20px;
+	}
+#downloadbox{
+	position:absolute;
+	top:190px;
+	width:800px;
+	height:25px;
+	border:1px solid gray;
+	padding-top:5px;
+	padding-bottom:5px;
+	margin:0 auto 0 auto;
+	background-color:green;
+	
+	}
+#downloadtable{
+	position:relative;
+	top:-10px;
+	width:800px;
+	height:100px;
+	border-collapse:collapse;
+	}
+#downloadtablep{
+	font-size:10px;
+	}
+table td {
+	border:1px solid gray; 
+	}
+#firsttd{
+	width:300px;
+	/*border-right:1px solid;
+	border-bottom:1px solid;*/
+	}
+#secondtd{
+	width:160px;
+	/*border-right:1px solid;
+	border-bottom:1px solid;*/
+	}
+#thirdtd{
+	width:160px;
+	/*border-right:1px solid;
+	border-bottom:1px solid;*/
+	}
+#fourthtd{
+	/*border-bottom:1px solid;*/
+	}
+th{
+	font-size:16px;
+	text-align:center;
+	height:30px;
+	}
+	
+/* Sortable tables */
+table.sortable thead {
+    height:60px;
+	background-color:green;
+    color:black;
+    font-weight: bold;
+    cursor: default;
+}
+table.sortable thead a{
+	color:black;
+	}
+
+		
