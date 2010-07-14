@@ -22,8 +22,9 @@
 	<li><button class="one"   type="button"  onclick="window.location='download.html'">Find Software</button></li>
 	<li><button class="two"   type="button" onclick="window.location=''">Search Project</button></li>
 	<li><button class="three" type="button" onclick="window.location=''">Suggest Project</button></li>
-	<li><button class="four"  type="button" onclick="window.location=''">More Information</button></li>
 	<li><button class="five"  type="button" onclick="window.location='contribute.html'">Contribute</button></li>
+	<li><button class="four"  type="button" onclick="window.location=''">More Information</button></li>
+	
 </ul>
 <div id="title">
 	<a href="register.php"> Go back to registration</a><br>

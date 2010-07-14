@@ -5,7 +5,7 @@ body{
 	}
 #wrap{
 	width:800px;
-	height:600px;
+	height:850px;
 	border: 1px solid;
 	margin:0 auto 0 auto;
 	background-color:white;
@@ -153,7 +153,7 @@ background:blue;
 #downloadtablep{
 	font-size:10px;
 	}
-table td {
+#downloadtable td {
 	border:1px solid gray; 
 	}
 #firsttd{
@@ -174,22 +174,27 @@ table td {
 #fourthtd{
 	/*border-bottom:1px solid;*/
 	}
-th{
+#th{
 	font-size:16px;
 	text-align:center;
-	height:30px;
+	height:25px;
+	padding: 9px;
 	}
 	
 /* Sortable tables */
-table.sortable thead {
+#thead {
     height:60px;
 	background-color:green;
     color:black;
     font-weight: bold;
     cursor: default;
+	padding:20px 20px;
 }
-table.sortable thead a{
+#thead a{
 	color:black;
 	}
-
-		
+#suggestable{
+	margin:0 100px;
+	font-size:14px;
+	width:600px;
+	}

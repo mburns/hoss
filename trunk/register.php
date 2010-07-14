@@ -22,8 +22,9 @@
 	<li><button class="one"   type="button"  onclick="window.location='download.html'">Find Software</button></li>
 	<li><button class="two"   type="button" onclick="window.location=''">Search Project</button></li>
 	<li><button class="three" type="button" onclick="window.location=''">Suggest Project</button></li>
-	<li><button class="four"  type="button" onclick="window.location=''">More Information</button></li>
 	<li><button class="five"  type="button" onclick="window.location='contribute.html'">Contribute</button></li>
+	<li><button class="four"  type="button" onclick="window.location=''">More Information</button></li>
+	
 </ul>
 
 <div id="title">
@@ -33,7 +34,7 @@
 <div id="registermaincontent" > 
 
 <form action="verify.php" method="post">
-<fieldset>
+<fieldset id="size">
 <legend id="center">Account Information</legend><br>
 		<b>Username:<font color="red">*</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="username" type="text" size="50"/><br/></b><br>
 		 <b>Password:<font color="red">*</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password" size="50"/></b>

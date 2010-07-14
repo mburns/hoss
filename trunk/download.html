@@ -25,8 +25,9 @@
 	<li><button class="one"   type="button"  onclick="window.location='download.html'">Find Software</button></li>
 	<li><button class="two"   type="button" onclick="window.location='searchproject.html'">Search Project</button></li>
 	<li><button class="three" type="button" onclick="window.location='suggestproject.html'">Suggest Project</button></li>
-	<li><button class="four"  type="button" onclick="window.location='moreinfo.html'">More Information</button></li>
 	<li><button class="five"  type="button" onclick="window.location='contribute.html'">Contribute</button></li>
+	<li><button class="four"  type="button" onclick="window.location='moreinfo.html'">More Information</button></li>
+	
 </ul>
 <div id="title">
 Find Software
@@ -72,12 +73,12 @@ Sort by:
 To sort the table, simply click on the colum header.
 
 <table class="sortable" id="downloadtable">
-<thead>
+<thead id="thead">
 <tr>
-<TH>Application Name</TH>
-<TH>Category</TH>
-<TH>Supported Phone</TH>
-<TH>Download</TH>
+<TH id="th">Application Name</TH>
+<TH id="th">Category</TH>
+<TH id="th">Supported Phone</TH>
+<TH id="th">Download</TH>
 </tr>
 </thead>
 
@@ -91,11 +92,11 @@ To sort the table, simply click on the colum header.
 Hearing Impaired
 </td>
 <td id="thirdtd">
-Andriod
+Android
 </td>
 <td id="fourthtd">
 <a href=""><image src="download.png"></a>
-<a href="">Download Now</a>
+<a href="">Download</a>
 </td>
 </tr>
 
@@ -108,11 +109,11 @@ Andriod
 Visually Impaired
 </td>
 <td id="thirdtd">
-Andriod
+Android 
 </td>
 <td id="fourthtd">
 <a href=""><image src="download.png"></a>
-<a href="">Download Now</a>
+<a href="">Download</a>
 </td>
 </tr>
 
@@ -125,11 +126,11 @@ Andriod
 Learning Impaired
 </td>
 <td id="thirdtd">
-Iphone
+iPhone
 </td>
 <td id="fourthtd">
 <a href=""><image src="download.png"></a>
-<a href="">Download Now</a>
+<a href="">Download</a>
 </td>
 </tr>
 </tbody>
