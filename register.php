@@ -45,7 +45,7 @@
 
 <fieldset>
 <legend id="center"> Personal Information</legend><br>
-		 <b>Fullname:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 <b>Full name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		 <input name="fullname" type="text" size="50"/><br/><br>
          <b>E-mail Address:<font color="red">*</font><input type="text" name="email" size="50"/><br><br>
 </fieldset>
