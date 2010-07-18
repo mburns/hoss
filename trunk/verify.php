@@ -26,12 +26,16 @@
 	<li><button class="four"  type="button" onclick="window.location=''">More Information</button></li>
 	
 </ul>
+
 <div id="title">
-	<a href="register.php"> Go back to registration</a><br>
-	<a href="index.html"> Go back to main page</a>
+	<a href="register.php"> Go back to registration page</a><br>
+	<a href="index.html"> Go to main page</a>
 </div>
 
-</div>
+
+</body>
+</html>
+
 <?php
 
 $servername = 'oniddb.cws.oregonstate.edu';
@@ -52,8 +56,8 @@ if ($_POST['form_submitted'] == '1') {
 		$activationKey =  mt_rand() . mt_rand() . mt_rand();
 		$username = mysql_real_escape_string($_POST[username]);
 		$password = mysql_real_escape_string($_POST[password]);
+
 		$email = mysql_real_escape_string($_POST[email]);
-		$fullname = mysql_real_escape_string($_POST[fullname]);
 		
 		
 	if (isset($_POST["submit"])){
@@ -140,35 +144,32 @@ if ($_POST['form_submitted'] == '1') {
 		if (!mysql_query($sql)){
 			die('Error: ' . mysql_error());
 		}
+		
 			?>
 			<script type="text/javascript">
 			alert("An email has been sent to your email address with an activation key. Please check your mail to complete registration.");
 			</script>
 			<?php
+		//echo "An email has been sent to $_POST[email] with an activation key. Please check your mail to complete registration.";
 
 		##Send activation Email
 
 		$to      = $_POST[email];
 
-		$subject = " OSS ACCESS";
+		$subject = " YOURWEBSITE.com Registration";
 
-		$message = "Welcome to our OSS ACCESS!\r\r
-		
-		You, or someone using your email address, has completed registration at OSS ACCESS Website.
-
-		You can complete registration by clicking the following link:\rhttp://web.engr.orst.edu/~sharifpa/HOSS/verify.php?$activationKey
-		
+		$message = "Welcome to our website!\r\rYou, or someone using your email address, has completed registration at YOURWEBSITE.com. You can complete registration by clicking the following link:\rhttp://web.engr.orst.edu/~sharifpa/HOSS/verify.php?$activationKey
 		\r\rIf this is an error, ignore this email and you will be removed from our mailing list.\r\rRegards,\ YOURWEBSITE.com Team";
 
-		$headers = 'From: noreply@ OSS ACCESS' . "\r\n" .
+		$headers = 'From: noreply@ YOURWEBSITE.com' . "\r\n" .
 
-		'Reply-To: noreply@ OSS ACCESS' . "\r\n" .
+		'Reply-To: noreply@ YOURWEBSITE.com' . "\r\n" .
 
 		'X-Mailer: PHP/' . phpversion();
 
 		mail($to, $subject, $message, $headers);
 
-}	
+	} 
 }
 else {
 
@@ -183,16 +184,16 @@ $result = mysql_query($query) or die(mysql_error());
   while($row = mysql_fetch_array($result)){
 
     if ($queryString == $row["activationkey"]){
-	
-	?>
+		
+			?>
 			<script type="text/javascript">
-			alert("Congratulations! You have successfully activated your account.");
+			alert("Congratulations! You have successfully activated your account.");	
 			</script>
 			<?php
-	//echo "Congratulations! " . $row["username"] . " You have successfully activated your account.";
-       
-	   $sql="UPDATE users SET activationkey = '', status='activated' WHERE (id = $row[id])";
-	
+       echo "Congratulations!" . $row["username"] . " You have successfully activated your account. ";
+
+       $sql="UPDATE users SET activationkey = '', status='activated' WHERE (id = $row[id])";
+
        if (!mysql_query($sql))
 
   {
@@ -200,11 +201,10 @@ $result = mysql_query($query) or die(mysql_error());
         die('Error: ' . mysql_error());
 
   }
+
     }
 
   }
 
 }
 ?>
-
-</div>
