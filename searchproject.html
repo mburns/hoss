@@ -4,9 +4,35 @@
 <head>
 <title>Search Project</title>
 <link rel="stylesheet" type="text/css" href="main.css" />
+
+<script> 
+var myvar;
+function menuinit() {
+        document.getElementById('m1').style.display = 'none';
+        document.getElementById('m2').style.display = 'none';
+        document.getElementById('m3').style.display = 'none';
+	document.getElementById('pm1').src = 'plus.png';
+	document.getElementById('pm2').src = 'plus.png';
+	document.getElementById('pm3').src = 'plus.png';
+}
+function menuexpand (i) {
+        menuinit();
+        if (myvar == i) {
+		document.getElementById('p' + i).src = 'plus.png';
+		document.getElementById(i).style.display = 'none';
+		myvar = '';
+	}
+        else {
+		document.getElementById('p' + i).src = 'minus.png';
+		document.getElementById(i).style.display = 'block';
+		myvar = i;
+	}
+}
+</script> 
+
 </head>
 <body>
-<body class="section2">
+<body class="section2" onload="menuinit();">
 
 
 
@@ -24,6 +50,56 @@
 	<li><button class="five"  type="button" onclick="window.location='contribute.html'">Contribute</button></li>
 	<li><button class="four"  type="button" onclick="window.location='moreinfo.html'">More Information</button></li>
 </ul>
-<div id="title">
+<div id="title1">
 Search Project
+<hr>
+
+<div id="pfont">
+<p>The followings are the project that are in development. To read more 
+about the project click on the plus icon next to the project title.
+</p>  
 </div>
+<br>
+
+<ul id="suggestcontent"> 
+
+<b id="titlefont">Scribe4Me</b> 
+<li>
+<a href="#" class="span" onclick="menuexpand('m1');return false;">an application for hearing impaired people<img id="pm1" src="" alt=""></a> 
+<ul id="m1"> 
+<li> mobile sound translation tool for the deaf or hard-of-hearing people. </li> 
+</ul> 
+</li> 
+<br>
+
+<b id="titlefont">Visual Helper</b>
+<li>  
+<a href="#" class="span" onclick="menuexpand('m2');return false;">an application for visual impaired<img id="pm2" src="" alt=""></a> 
+<ul id="m2"> 
+<li> Moblie application for visually impaired people</li> 
+</ul> 
+</li> 
+<br>
+
+<b id="titlefont">Learning Impaired</b> 
+<li> 
+<a href="#" class="span" onclick="menuexpand('m3');return false;">An application for learning impaired<img id="pm3" src="" alt=""></a> 
+<ul id="m3"> 
+<li> Mobile Application for learning impaired people. </li> 
+</ul> 
+</li> 
+</ul> 
+
+</div>
+
+
+<!-- vertical navigation bar!--->
+<ul id="hnavigation">
+<li><button class="two2"   type="button" onclick="window.location='searchproject.html'">Search Project</button></li>
+<li><button class="three3" type="button" onclick="window.location='suggestproject.html'">Suggest Project</button></li> </li>
+<li><button class="one1" type="button" onclick="window.location='download.html'"> Find Software</button>
+</ul>
+
+</div>
+</body>
+</html>

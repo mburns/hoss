@@ -5,7 +5,7 @@ body{
 	}
 #wrap{
 	width:800px;
-	height:850px;
+	height:950px;
 	border: 1px solid;
 	margin:0 auto 0 auto;
 	background-color:white;
@@ -18,6 +18,16 @@ body.section5 #navigation button.five
 {
 background:blue;
 }
+
+body.section1 #hnavigation button.one1,
+body.section2 #hnavigation button.two2,
+body.section3 #hnavigation button.three3,
+body.section4 #hnavigation button.four4,
+body.section5 #hnavigation button.five5
+{
+background:blue;
+}
+
 
 #skip{
 	position:relative;
@@ -65,10 +75,25 @@ background:blue;
 	top:80px;
 	font-size:25px;
 	}
+	
+#title1{
+	position:relative;
+	top:90px;
+	font-size:25px;
+	width:650px;
+	margin:0 150px;
+	}
+#pfont{
+	font-size:14px;
+	}
+#titlefont{
+	font-size:20px;
+	color:darkblue;
+	}
 #search{
 	float:right;
 	position:relative;
-	top:60px;
+	top:70px;
 	height:35px;
 	/*width:800px;*/
 	/*border-bottom:.5em solid #999999;*/
@@ -90,46 +115,8 @@ background:blue;
 	top:170px;
 	margin-left:30px;
 	}
-
 #center{
 	margin-left:10px;
-	}
-
-#box1{
-	width:350px;
-	/*background-color: #dfdfbc;*/
-	position:absolute;
-	top:190px;
-	border:.7em outset #CCCCCC;
-	}
-#border-bottom{
-	border-bottom:1px solid;
-	border-top:1px solid;
-	}
-#box2{
-	width:350px;
-	position:absolute;
-	top:190px;
-	left:531px;
-	border:.7em outset #CCCCCC;
-	}
-#box3{
-	width:350px;
-	position:absolute;
-	top:400px;
-	border:.7em outset #CCCCCC;
-	}
-#box4{
-	width:350px;
-	position:absolute;
-	top:400px;
-	left:531px;
-	border:.7em outset #CCCCCC;
-	}
-#sortexp{
-	position:relative;
-	top:130px;
-	height:20px;
 	}
 #downloadbox{
 	position:absolute;
@@ -146,9 +133,10 @@ background:blue;
 #downloadtable{
 	position:relative;
 	top:-10px;
-	width:800px;
+	width:650px;
 	height:100px;
 	border-collapse:collapse;
+	font-size:16px;
 	}
 #downloadtablep{
 	font-size:10px;
@@ -162,28 +150,31 @@ background:blue;
 	border-bottom:1px solid;*/
 	}
 #secondtd{
-	width:160px;
+	width:150px;
 	/*border-right:1px solid;
 	border-bottom:1px solid;*/
 	}
 #thirdtd{
-	width:160px;
+	width:100px;
 	/*border-right:1px solid;
 	border-bottom:1px solid;*/
 	}
 #fourthtd{
 	/*border-bottom:1px solid;*/
+	width:100px;
+	}
+#fourthtd a{
+	text-decoration:none;
 	}
 #th{
 	font-size:16px;
 	text-align:center;
 	height:25px;
-	padding: 9px;
+	padding: 7px;
 	}
-	
 /* Sortable tables */
 #thead {
-    height:60px;
+    height:50px;
 	background-color:green;
     color:black;
     font-weight: bold;
@@ -194,7 +185,44 @@ background:blue;
 	color:black;
 	}
 #suggestable{
-	margin:0 100px;
 	font-size:14px;
 	width:600px;
+	}
+#hnavigation{
+	position:absolute;
+	top:165px;
+	width:100px;
+	list-style-type:none;
+	margin:0 10px;
+	padding:0;
+	
+	}
+#hnavigation button{
+	display:block;
+	background-color:#FFFFFF;
+	width:130px;
+	height:40px;
+	background-color:#d3d3d3;
+	border:1px solid #C0C0C0;
+	}
+#hnavigation button:hover{
+	background-color: #336699;
+	color:#ffffff;
+	cursor: pointer;
+	}
+#suggestcontent, #suggestcontent ul, #suggestcontent li{
+	margin:0;
+	padding:0;
+	list-style:none;
+	}
+#suggestcontent li {
+	font-size:16px;
+	}
+#suggestcontent a{
+	text-decoration:none;
+	color:black;
+	display:block;
+	}
+#suggestcontent li {
+	background-color:lightgray;
 	}

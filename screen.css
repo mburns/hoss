@@ -21,7 +21,7 @@ margin:0;
 /* background-image:url(images/bannerbg.jpg);
    background-repreat:no-repreat; */
 
-#content{width:740px; padding:5px; border:1px solid; position: absolute; top:280px; left:130px;}
+#content{width:740px; padding:5px; border:1px solid; position: absolute; top:280px; margin: 0 25px;}
 
 #menu{text-align:center;}
 
@@ -105,9 +105,9 @@ input, textarea {font-size:1em;}
 
 /* format for buttons */
 button.largeButton{
-	margin:.4em;
-	width:10.5em;
-	height:10.5em;
+	margin:.3em;
+	width:11em;
+	height:11em;
 	padding:1em; 
 	}
 
