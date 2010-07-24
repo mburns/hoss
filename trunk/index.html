@@ -30,12 +30,41 @@
 
 <div id="login">
 <form action="" id="login" method="post">
-           <input id="login" name="username" type="text" size="15" value="Username"/>
-		   <input id="login" name="password" type="password" size="15" value="Password"/>
-            <input id="searchbutton" type="submit" value="Submit" />
+           <input id="login" name="username" type="text" size="15" />
+		   <input id="login" name="password" type="password" size="15" />
+            <input id="searchbutton" type="submit" value="Submit" name="submit"/>
 			<a href="register.php">Create New Account</a> 
 </form>
 </div>
+
+<?php
+$servername = 'oniddb.cws.oregonstate.edu';
+$username   = 'sharifpa-db';
+$password	= 'mnsQcoylLEHnTbpb';
+$dbname		= 'sharifpa-db';
+
+$con	    = mysql_connect($servername,$username,$password)
+	or die  ("Error connecting to database server");
+
+mysql_select_db($dbname, $con)
+	or die  ("Error selecting the database");
+
+
+if (isset($_POST["submit"])){
+  $username=$_POST['username'];
+  $password=$_POST['password'];
+	$query= "select username, password from users where username='$username' AND password='$password'";
+	$result= mysql_query($query);
+	if ($result){
+		echo"welcome";
+		}
+	else{
+		 print("Sorry, invalid username or password.");
+       exit;
+	   }
+}
+?>
+
 
 <div id="content">
 Welcome to Open Source Software Access. <a href="#menu" title="Skip to menu">&darr;</a><br/><br/>
