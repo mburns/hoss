@@ -2,51 +2,45 @@
 
 <html>
 <head>
-<title>Register</title>
+<title>HFOSS Enablement--Verify</title>
 <link rel="stylesheet" type="text/css" href="main.css" />
 </style>
 </head>
 <body>
-<!--<body bgcolor="#505050">!-->
 <body bgcolor="#CCCCCC">
 
 <div id="wrap">
 
+<div id="logo">
+<a href="index.php" title="Homepage"><image src="logo.jpg"></image></a>
+</div>
 
 <div id="skip">
-<a href="#registermaincontent">Skip to Main Content</a>
+<a href="#maincontent">Skip to Main Content</a>
 </div>
 
 
 <ul id="navigation">
-	<li><button class="one"   type="button"  onclick="window.location='download.html'">Find Software</button></li>
-	<li><button class="two"   type="button" onclick="window.location=''">Search Project</button></li>
-	<li><button class="three" type="button" onclick="window.location=''">Suggest Project</button></li>
-	<li><button class="five"  type="button" onclick="window.location='contribute.html'">Contribute</button></li>
-	<li><button class="four"  type="button" onclick="window.location=''">More Information</button></li>
+	<li><button class="one"   type="button" onclick="window.location='findsoftware.html'" title="Find Software">Find Software</button></li>
+	<li><button class="two"   type="button" onclick="window.location='searchproject.php'" title="Search Projects">Search Projects</button></li>
+	<li><button class="three" type="button" onclick="window.location='suggestproject.php'" title="Suggest a Project">Suggest a Project</button></li>
+	<li><button class="five"  type="button" onclick="window.location='contribute.html'" title="Contribute">Contribute</button></li>
+	<li><button class="four"  type="button" onclick="window.location='moreinfo.html'" title="More Information">More Information</button></li>
 	
 </ul>
 
 <div id="title">
+	<!-- skip to main content!-->
+	<a name="maincontent" id="maincontent"></a>
 	<center><br>Congratulations! You have successfully activated your account.<br><br>
-	<a href="index.html"> Go to main page</a></center>
-</div>
+	<a href="index.php"><image src="mainpagebutton.png"></a></center>
+	</div>
 </body>
 </html>
 
 <?php
+include("mysqlconnection.php");
 
-$servername = 'oniddb.cws.oregonstate.edu';
-$username   = 'sharifpa-db';
-$password	= 'mnsQcoylLEHnTbpb';
-$dbname		= 'sharifpa-db';
-
-$con	    = mysql_connect($servername,$username,$password)
-	or die  ("Error connecting to database server");
-
-	
-mysql_select_db($dbname, $con)
-	or die  ("Error selecting the database");
 	
 ##User isn't registering, check verify code and change activation code to null, status to activated on success
 

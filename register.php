@@ -1,43 +1,49 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
+<!-- This page is used for user registration. 
+Author:Ahmad Sharifpour
+!-->
 <html>
 <head>
-<title>Register</title>
+<title>HFOSS Enablement--Registeration</title>
 <link rel="stylesheet" type="text/css" href="main.css" />
 </style>
 </head>
-<body>
-<!--<body bgcolor="#505050">!-->
 <body bgcolor="#CCCCCC">
-
-<div id="wrap">
+<!-- page wrapper !-->
+<div id="wrap1">
+<!-- HFOSS Enablement Logo !-->
+<div id="logo">
+<a href="index.php" title="Homepage"><image src="logo.jpg"></image></a>
+</div>
 
 
 <div id="skip">
-<a href="#registermaincontent">Skip to Main Content</a>
+<a href="#maincontent">Skip to Main Content</a>
 </div>
 
-
+<!-- horizontal menu !-->
 <ul id="navigation">
-	<li><button class="one"   type="button"  onclick="window.location='download.html'">Find Software</button></li>
-	<li><button class="two"   type="button" onclick="window.location=''">Search Project</button></li>
-	<li><button class="three" type="button" onclick="window.location=''">Suggest Project</button></li>
-	<li><button class="five"  type="button" onclick="window.location='contribute.html'">Contribute</button></li>
-	<li><button class="four"  type="button" onclick="window.location=''">More Information</button></li>
-	
+	<li><button class="one"   type="button" onclick="window.location='findsoftware.html'" title="Find Software">Find Software</button></li>
+	<li><button class="two"   type="button" onclick="window.location='searchproject.php'" title="Search Projects">Search Projects</button></li>
+	<li><button class="three" type="button" onclick="window.location='suggestproject.php'" title="Suggest a Project">Suggest a Project</button></li>
+	<li><button class="five"  type="button" onclick="window.location='contribute.html'" title="Contribute">Contribute</button></li>
+	<li><button class="four"  type="button" onclick="window.location='moreinfo.html'" title="More Information">More Information</button></li>
 </ul>
 
-<div id="title">
-	Registration
-</div>
-
-<div id="registermaincontent" > 
+<!-- main content of the page !-->
+<div id="registermaincontent" >
+	<!-- skip to main content!-->
+	<a name="maincontent" id="maincontent"></a>
+	<h2>Registeration</h2>
+	<hr>
+	<font id="fontsize">The Fields marked with * are required.</font>
+	<br><br>
 
 <form action="" method="post">
 <fieldset id="size">
 <legend id="center">Account Information</legend><br>
 		<b>Username:<font color="red">*</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<input name="username" type="text" size="50"value="<?php echo $_POST['username'] ?>" /><br/></b><br>
+		<input name="username" type="text" size="50" /><br/></b><br>
 		 <b>Password:<font color="red">*</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		 <input type="password" name="password" size="50" /></b>
 		 <br><br>
@@ -47,31 +53,24 @@
 
 <fieldset>
 <legend id="center"> Personal Information</legend><br>
-		 <b>Full name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		 <input name="fullname" type="text" size="50" value="<?php echo $_POST['fullname'] ?>"/><br/><br>
-         <b>E-mail Address:<font color="red">*
-		 </font><input type="text" name="email" size="50" value="<?php echo $_POST['email'] ?>"/><br><br>
+		 <b>Full name:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 <input name="fullname" type="text" size="50" /><br>
+		 <font id="fontsize">Specify your first and last name.</font><br>
+         <b>E-mail Address:</b><font color="red">*
+		 </font><input type="text" name="email" size="50" /><br>
+		 <font id="fontsize">Enter a valid email address. Your account activation code will be send to this email address.<br>
 </fieldset>
 <input type="hidden" name="form_submitted" value="1"/> 
-<br><input type="submit" name="submit" value="Create New Account" />
+<br><!--<input type="submit" name="submit" value="Create New Account" />!-->
+<input type="image" src="buttons/createacountbutton.png" value="submit" name="submit" id="submit" style="float:right;">
 </form>
 </div>
 
-<!-- end of main Content Wrapper !-->
+<!-- end of page wrapper !-->
 </div>
 <?php
+include("mysqlconnection.php");
 
-$servername = 'oniddb.cws.oregonstate.edu';
-$username   = 'sharifpa-db';
-$password	= 'mnsQcoylLEHnTbpb';
-$dbname		= 'sharifpa-db';
-
-$con	    = mysql_connect($servername,$username,$password)
-	or die  ("Error connecting to database server");
-
-	
-mysql_select_db($dbname, $con)
-	or die  ("Error selecting the database");
 
 
 if ($_POST['form_submitted'] == '1') {
@@ -170,9 +169,9 @@ if ($_POST['form_submitted'] == '1') {
 			exit();
 			}
 	
-		$password=md5($pssword);
-		##User is registering, insert data until we can activate it
-
+		//$password=md5($pssword);
+		
+		// insert data into database
 
 		$sql="INSERT INTO users (username, password, email, fullname, activationkey, status) VALUES ('$username', '$password', '$email', '$fullname', '$activationKey', 'verify')";
 
@@ -185,62 +184,26 @@ if ($_POST['form_submitted'] == '1') {
 			alert("An email has been sent to your email address with an activation key. Please check your mail to complete registration.");
 			</script>
 			<?php
-		//echo "An email has been sent to $_POST[email] with an activation key. Please check your mail to complete registration.";
 
-		##Send activation Email
+		//Send activation Email
 
 		$to      = $_POST[email];
 
-		$subject = " YOURWEBSITE.com Registration";
+		$subject = " Hfossenablement.com Registration";
 
-		$message = "Welcome to our website!\r\rYou, or someone using your email address, has completed registration at YOURWEBSITE.com. You can complete registration by clicking the following link:\rhttp://web.engr.orst.edu/~sharifpa/HOSS/verify.php?$activationKey
-		\r\rIf this is an error, ignore this email and you will be removed from our mailing list.\r\rRegards,\ YOURWEBSITE.com Team";
+		$message = "Welcome to our website!\r\rYou, or someone using your email address, has completed registration at Hfossenablement.com. You can complete registration by clicking the following link:\rhttp://web.engr.orst.edu/~sharifpa/HOSS/verify.php?$activationKey
+		\r\rIf this is an error, ignore this email and you will be removed from our mailing list.\r\rRegards,\ Hfossenablement.com Team";
 
-		$headers = 'From: noreply@ YOURWEBSITE.com' . "\r\n" .
+		$headers = 'From: noreply@ Hfossenablement.com' . "\r\n" .
 
-		'Reply-To: noreply@ YOURWEBSITE.com' . "\r\n" .
+		'Reply-To: noreply@ hfossenablement.com' . "\r\n" .
 
 		'X-Mailer: PHP/' . phpversion();
-
 		mail($to, $subject, $message, $headers);
 
 	} 
 }
-/*
-else {
-
-##User isn't registering, check verify code and change activation code to null, status to activated on success
-
-$queryString = $_SERVER['QUERY_STRING'];
-
-$query = "SELECT * FROM users"; 
-
-$result = mysql_query($query) or die(mysql_error());
-
-while($row = mysql_fetch_array($result)){
-
-if ($queryString == $row["activationkey"]){
-		?>
-			<script type="text/javascript">
-			alert("Congratulations! You have successfully activated your account.");	
-			</script>
-			<?php
-       $sql="UPDATE users SET activationkey = '', status='Activated' WHERE (id = $row[id])";
-	
-       if (!mysql_query($sql)){
-			die('Error: ' . mysql_error());
-		}
-			
-	}
-
-  }
-
-}
-*/
 ?>
-
-
-
 
 </body>
 </html>
