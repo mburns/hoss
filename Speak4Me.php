@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
 session_start();
-//holds the name of the software. Used to add it to the database.
+//holds the name of the software. Used to add it to the database for software review.
 $_SESSION['softwarename'] = Speak4Me;
 $username=$_SESSION['username'];
 //store the link visited into a session variable so that users gets redirected to this page after login
@@ -61,7 +61,7 @@ function menuexpand (i) {
 <a name="maincontent" id="maincontent"></a>
 <br>Speak4Me 
 <hr color="green">
-<a href=""><image src="download.png" style="border:none"></a>
+<a href=""><image src="images\download.png" style="border:none"></a>
 <a href="">Download Now</a>
 <br>
 <div id="pfont" >
