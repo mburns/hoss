@@ -117,22 +117,9 @@ function emailValidator(elem, helperMsg){
 
 
 <div id="wrap2">
-<div id="logo">
-<a href="index.php" title="Homepage"><image src="logo.jpg"></image></a>
-</div>
-
-<div id="skip">
-<a href="#maincontent">Skip to Main Content</a>
-</div>
-
-<!--top of page navigation!-->
-<ul id="navigation">
-	<li><button class="one"   type="button" onclick="window.location='findsoftware.html'" title="Find Software">Find Software</button></li>
-	<li><button class="two"   type="button" onclick="window.location='searchproject.php'" title="Search Projects">Search Projects</button></li>
-	<li><button class="three" type="button" onclick="window.location='suggestproject.php'" title="Suggest a Project">Suggest a Project</button></li>
-	<li><button class="five"  type="button" onclick="window.location='contribute.html'" title="Contribute">Contribute</button></li>
-	<li><button class="four"  type="button" onclick="window.location='moreinfo.html'" title="More Information">More Information</button></li>
-</ul>
+<?php
+include("navigation.php");
+?>
 
 
 
@@ -251,7 +238,7 @@ Instead, use the <a href="http://sourceforge.net/tracker/?atid=1408957&group_id=
 <br>
 <fieldset>
 Type This Number:<font color="red">*</font> &nbsp;<input name="checknumber" id="checknumber" type="text" size="15">
-<image src="feedbackcheck.gif">
+<image src="images\feedbackcheck.gif">
 </fieldset>
 <br><!--<input type="submit" name="submit" value="Suggest Your Project" />!-->
 <input type="image" src="buttons/suggestyourprojectbutton.png" value="submit" name="submit" id="submit">

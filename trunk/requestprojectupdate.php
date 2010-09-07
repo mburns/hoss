@@ -44,23 +44,10 @@ function notEmpty(elem, helperMsg){
 
 <div id="wrap1">
 
-<div id="logo">
-<a href="index.php" title="Homepage"><image src="logo.jpg"></image></a>
-</div>
+<?php
+include("navigation.php");
+?>
 
-<div id="skip">
-<a href="#maincontent">Skip to Main Content</a>
-</div>
-
-
-<ul id="navigation">
-	<li><button class="one"   type="button" onclick="window.location='findsoftware.html'" title="Find Software">Find Software</button></li>
-	<li><button class="two"   type="button" onclick="window.location='searchproject.php'" title="Search Projects">Search Projects</button></li>
-	<li><button class="three" type="button" onclick="window.location='suggestproject.php'" title="Suggest a Project">Suggest a Project</button></li>
-	<li><button class="five"  type="button" onclick="window.location='contribute.html'" title="Contribute">Contribute</button></li>
-	<li><button class="four"  type="button" onclick="window.location='moreinfo.html'" title="More Information">More Information</button></li>
-	
-</ul>
 
 <div id="title">
 	<!-- skip to main content!-->
