@@ -1,8 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php
+session_start();
 
+if (isset($_SESSION['username']) && isset($_SESSION['password'])){
+	if(($_SESSION['username'] == 'Admin') && ($_SESSION['password'] == 'hfossadmin')){
+		$requestprojectpage = "<button id=\"buttontextalign\" type=\"button\" onclick=\"window.location='requestproject.php'\"> Request Project</button>";
+
+	}
+}
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
-<title>Suggest Project</title>
+<title>HFOSS Enablement--Suggest a Project</title>
 <link rel="stylesheet" type="text/css" href="main.css" />
 
 <script type='text/javascript'>
@@ -106,7 +116,10 @@ function emailValidator(elem, helperMsg){
 
 
 
-<div id="wrap">
+<div id="wrap2">
+<div id="logo">
+<a href="index.php" title="Homepage"><image src="logo.jpg"></image></a>
+</div>
 
 <div id="skip">
 <a href="#maincontent">Skip to Main Content</a>
@@ -114,24 +127,25 @@ function emailValidator(elem, helperMsg){
 
 <!--top of page navigation!-->
 <ul id="navigation">
-	<li><button class="one"   type="button"  onclick="window.location='download.html'">Find Software</button></li>
-	<li><button class="two"   type="button" onclick="window.location='searchproject.html'">Search Projects</button></li>
-	<li><button class="three" type="button" onclick="window.location='suggestproject.html'">Suggest Project</button></li>
-	<li><button class="five"  type="button" onclick="window.location='contribute.html'">Contribute</button></li>
-	<li><button class="four"  type="button" onclick="window.location='moreinfo.html'">More Information</button></li>
+	<li><button class="one"   type="button" onclick="window.location='findsoftware.html'" title="Find Software">Find Software</button></li>
+	<li><button class="two"   type="button" onclick="window.location='searchproject.php'" title="Search Projects">Search Projects</button></li>
+	<li><button class="three" type="button" onclick="window.location='suggestproject.php'" title="Suggest a Project">Suggest a Project</button></li>
+	<li><button class="five"  type="button" onclick="window.location='contribute.html'" title="Contribute">Contribute</button></li>
+	<li><button class="four"  type="button" onclick="window.location='moreinfo.html'" title="More Information">More Information</button></li>
 </ul>
 
 
 
-
 <div id="title1">
-Suggest Project
+<!-- skip to main content!-->
+<a name="maincontent" id="maincontent"></a>
+Suggest a Project
 <hr/>
 
 <div id="pfont">
 <p>Use the following form to suggest your project.</p>
 
-<p>Please note, before submitting your project check the <a href="download.html"> Find software page </a> and <a href="searchproject.html">Search Project page </a>to make sure that your project
+<p>Please note, before submitting your project check the <a href="findsoftware.html"> Find software page </a> and <a href="searchproject.html">Search Project page </a>to make sure that your project
 is not currently developed or submitted.</p>
 
 <p> If you find your project on the Search Project and Find Software pages, please do not submit it again.
@@ -142,12 +156,12 @@ Instead, use the <a href="http://sourceforge.net/tracker/?atid=1408957&group_id=
 <fieldset>
 <Legend><b>Contact Information</b></legend>
 <table><tr>
-<td>Full name: </td><td><input name="fullname" id="fullname" type="text" size="50" /></td></tr>
-<tr><td>Email Address: </td><td><input name="email" id="email" type="text" size="50" /></td></tr>
-<tr><td>Organization: </td><td><input name="organization" id="organization" type="text" size="50" /></td></tr>
-<tr><td>Address: </td><td><input name="address" id="address" type="text" size="50" /></td></tr>
-<tr><td>City: </td><td><input name="city" id="city" type="text" size="50" /></td></tr>
-<tr><td>State: </td><td><SELECT class='txtbox' NAME="state" id="state"> 
+<td>Full name:<font color="red">*</font> </td><td><input name="fullname" id="fullname" type="text" size="50" /></td></tr>
+<tr><td>Email Address:<font color="red">*</font> </td><td><input name="email" id="email" type="text" size="50" /></td></tr>
+<tr><td>Organization:<font color="red">*</font> </td><td><input name="organization" id="organization" type="text" size="50" /></td></tr>
+<tr><td>Address:<font color="red">*</font></td><td><input name="address" id="address" type="text" size="50" /></td></tr>
+<tr><td>City:<font color="red">*</font> </td><td><input name="city" id="city" type="text" size="50" /></td></tr>
+<tr><td>State:<font color="red">*</font> </td><td><SELECT class='txtbox' NAME="state" id="state"> 
 <OPTION>Please Choose</OPTION>
 <OPTION VALUE="AK">Alaska</OPTION>
 <OPTION VALUE="AL">Alabama</OPTION>
@@ -223,40 +237,32 @@ Instead, use the <a href="http://sourceforge.net/tracker/?atid=1408957&group_id=
 <OPTION VALUE="--">-----------------------</OPTION>
 <OPTION VALUE="Other">Other</OPTION>
 </SELECT></td></tr>
-<tr><td>Zip Code: </td><td><input name="zip" id="zip" type="text" size="50" /></td></tr>
+<tr><td>Zip Code:<font color="red">*</font> </td><td><input name="zip" id="zip" type="text" size="50" /></td></tr>
 </table>
 </fieldset>
 <br>
 <fieldset>
 <legend><b>Project Information</b></legend>
 <table>
-<tr><td>Project Name: </td><td id="noborder"><input name="projectname" id="projectname" type="text" size="50" /></td></tr>
-<tr><td>Project Description: </td><td><textarea rows="12" cols="39" name="description" id="description" /> </textarea></td></tr>
+<tr><td>Project Name:<font color="red">*</font></td><td id="noborder"><input name="projectname" id="projectname" type="text" size="50" /></td></tr>
+<tr><td>Project Description:<font color="red">*</font> </td><td><textarea rows="12" cols="39" name="description" id="description" /> </textarea></td></tr>
 </table>
 </fieldset>
 <br>
 <fieldset>
-Type This Number:&nbsp;<input name="checknumber" id="checknumber" type="text" size="15">
+Type This Number:<font color="red">*</font> &nbsp;<input name="checknumber" id="checknumber" type="text" size="15">
 <image src="feedbackcheck.gif">
 </fieldset>
-<br><input type="submit" name="submit" value="Suggest Your Project" />
+<br><!--<input type="submit" name="submit" value="Suggest Your Project" />!-->
+<input type="image" src="buttons/suggestyourprojectbutton.png" value="submit" name="submit" id="submit">
+
 
 
 </form>
 
 <?php
+include("mysqlconnection.php");
 
-$servername = 'oniddb.cws.oregonstate.edu';
-$username   = 'sharifpa-db';
-$password	= 'mnsQcoylLEHnTbpb';
-$dbname		= 'sharifpa-db';
-
-$con	    = mysql_connect($servername,$username,$password)
-	or die  ('Error connecting to database server');
-
-	
-mysql_select_db($dbname, $con)
-	or die  ('Error selecting the database');
 
 
 $fullname=$_POST['fullname'];
@@ -271,7 +277,7 @@ $projectdescription=$_POST['description'];
 $checknumber=$_POST['checknumber'];
 
 if(isset($_POST['submit'])){
-$query= "INSERT INTO Suggest_Project (fullname, email, organization, address, city, stateA, zip, projectName, projectDescription) VALUES ('$fullname', '$email', '$organization', '$address', '$city', '$state', '$zip', '$projectname', '$projectdescription' )";
+$query= "INSERT INTO Suggest_Project (fullname, email, organization, address, city, stateA, zip, projectName, projectDescription, status) VALUES ('$fullname', '$email', '$organization', '$address', '$city', '$state', '$zip', '$projectname', '$projectdescription', 'pending' )";
 		$result=mysql_query($query);
 		if($result){
 		?>
@@ -289,10 +295,11 @@ $query= "INSERT INTO Suggest_Project (fullname, email, organization, address, ci
 
 
 <!-- vertical navigation bar!--->
-<ul id="hnavigation">
-<li><button class="one1"   id="buttontextalign" type="button" onclick="window.location='download.html'"> Find Software</button>
-<li><button class="two2"   id="buttontextalign" type="button" onclick="window.location='searchproject.html'">Search Projects</button></li>
-<li><button class="three3" id="buttontextalign" type="button" onclick="window.location='suggestproject.html'">Suggest Project</button></li> </li>
+<ul id="vnavigation">
+<li><button class="one1"   id="buttontextalign" type="button" onclick="window.location='findsoftware.html'" title="Find Software"> Find Software</button>
+<li><button class="two2"   id="buttontextalign" type="button" onclick="window.location='searchproject.php'" title="Search Projects">Search Projects</button></li>
+<li><button class="three3" id="buttontextalign" type="button" onclick="window.location='suggestproject.php'" title="Suggest a Project">Suggest a Project</button></li> </li>
+<li><?php echo $requestprojectpage; ?></li>
 </ul>
 <!--end of wrap!-->
 </div>

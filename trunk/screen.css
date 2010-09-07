@@ -17,13 +17,13 @@ margin:0;
 
 /*define divisions*/
 
-#page{padding:1em;  width:800px; height:500px;margin-left:auto; margin-right:auto; background-color:#ffffff; border: 1px solid black;}
+#page{padding:1em;  width:800px; height:600px;margin-left:auto; margin-right:auto; background-color:#ffffff; border: 1px solid black;}
 /* background-image:url(images/bannerbg.jpg);
    background-repreat:no-repreat; */
 
-#content{width:740px; padding:5px; border:1px solid; position: absolute; top:280px; margin: 0 25px;}
+#content{width:740px; padding:5px; border:1px solid; position: absolute; top:340px; margin: 0 25px;}
 
-#menu{text-align:center;}
+#menu{ margin:0; position:absolute; top:170px; width:800px;}
 
 #rightcolumn{width:200px; background-color:#cccccc; float:right; margin:5px;}
 
@@ -118,5 +118,21 @@ button.largeButton:hover {
 }
 
 #login{
-	font-size:.9em;
+	float:left;
+	font-size:11px;
 	}
+#margin{
+	margin:-4px;
+	}
+#margin:hover{
+/*	background-color:#336699;*/
+	border:1px solid;
+	}
+#login button{
+	width:160px;
+	height:30px;
+	}
+#searchbox{
+float:right;
+	}
+

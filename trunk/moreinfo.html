@@ -1,8 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
+<?php
+session_start();
+?>
 <html>
 <head>
-<title>More Information</title>
+<title>HFOSS Enablement--More Information</title>
 <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
@@ -10,22 +12,50 @@
 
 
 
-<div id="wrap">
+<div id="wrap1">
+
+<div id="logo">
+<a href="index.php" title="Homepage"><image src="logo.jpg"></image></a>
+</div>
 
 <div id="skip">
 <a href="#maincontent">Skip to Main Content</a>
 </div>
-
+<br>
+<br><br>
 <!--top of page navigation!-->
 <ul id="navigation">
-	<li><button class="one"   type="button"  onclick="window.location='download.html'">Find Software</button></li>
-	<li><button class="two"   type="button" onclick="window.location='searchproject.html'">Search Project</button></li>
-	<li><button class="three" type="button" onclick="window.location='suggestproject.html'">Suggest Project</button></li>
-	<li><button class="five"  type="button" onclick="window.location='contribute.html'">Contribute</button></li>
-	<li><button class="four"  type="button" onclick="window.location='moreinfo.html'">More Information</button></li>
+	<li><button class="one"   type="button" onclick="window.location='findsoftware.html'" title="Find Software">Find Software</button></li>
+	<li><button class="two"   type="button" onclick="window.location='searchproject.php'" title="Search Projects">Search Projects</button></li>
+	<li><button class="three" type="button" onclick="window.location='suggestproject.php'" title="Suggest a Project">Suggest a Project</button></li>
+	<li><button class="five"  type="button" onclick="window.location='contribute.html'" title="Contribute">Contribute</button></li>
+	<li><button class="four"  type="button" onclick="window.location='moreinfo.html'" title="More Information">More Information</button></li>
 	
 </ul>
-<div id="title1">
+<div id="title">
+<!-- skip to main content!-->
+<a name="maincontent" id="maincontent"></a>
 More Information
 <hr>
+<div id="textsize">
+<p>The Humanitarian Free and Open Source Software (HFOSS) movement is dedicated 
+to forming better communities.  By creating, sharing, and hosting altruistic software, 
+the various HFOSS programs strive to improve the world through digital volunteering.</p> 
+
+<p>The Enable project is designed to help people with disabilities. 
+By offering our software on mobile devices, we aim to make HFOSS portable and pertinent in everyday life.</p>  
+
+<p>Please search through our <a href="findsoftware.html"> Find Software </a> page for list of current software. 
+If you can't find what you need, please use our <a href="suggestproject.php"> Suggest a Project </a> 
+page to suggest your desired project and get in touch with volunteer programmers.</p>
+<p>To find out more about the projects that our volunteer programmers are working on, 
+please check <a href="searchproject.php"> Seach Projects </a>page.
+<p>If you'd like to help, please check our <a href="contribute.html">Contribute </a> page.
+Of course, donations are always welcome.</p> 
+<br>
+<p>Thanks for visiting.</p>
+
+Signed,
+
+HFOSS Enable Team</div>
 </div>
